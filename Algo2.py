@@ -91,7 +91,7 @@ def rental():
             f"\nGame : {game}"
             f"\nHarga : {harga}"), 
             font=("arial")
-            ).grid()
+            ).grid(row=0, column=1)
         # Memanggil fungsi hasil
         hasil()
         # Menghapus Inputan setelah dijalankan
