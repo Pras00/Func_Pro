@@ -20,11 +20,9 @@ thefont = tkinter.font.Font(size=15)
 judul = Label(window, text="TEMPERATURE CONVERTER", font=("georgia", 11, "bold")).place(x=17, y=13)
 
 # Kotas Input
-e1 = Entry(window, width = 15)
-e1["font"] = thefont
+e1 = Entry(window, width = 15, font=thefont)
 e1.place(x= 20, y = 50)
-e2 = Entry(window, width = 15)
-e2["font"] = thefont
+e2 = Entry(window, width = 15, font=thefont)
 e2.insert(0, "0")
 e2.place(x= 20, y = 110)
 
@@ -48,7 +46,7 @@ kel_celcius = lambda x : f"{x - 273}° C"
 kel_reamur = lambda x : f"{4/5 * (x - 273)}° R"
 kel_fahrenheit = lambda x : f"{(9/5 * (x - 273)) + 32}° F"
 
-def rumus(rm):
+def rumus():
     # Hapus isi kotak2
     e2.delete(0,END)
     
@@ -83,7 +81,7 @@ box2.current(1)
 box2.place(x= 20, y = 140)
 
 # Tombol Konvert
-btn = Button(window, text = "Convert", command=lambda : rumus("rumus"))
+btn = Button(window, text = "Convert", command=lambda : rumus())
 btn.place(x=240, y=83)
 
 
