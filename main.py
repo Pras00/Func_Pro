@@ -84,6 +84,5 @@ box2.place(x= 20, y = 140)
 btn = Button(window, text = "Convert", command=lambda : rumus())
 btn.place(x=240, y=83)
 
-
 # Looping Run Program
 window.mainloop()
