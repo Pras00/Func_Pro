@@ -26,6 +26,22 @@ e2 = Entry(window, width = 15, font=thefont)
 e2.insert(0, "0")
 e2.place(x= 20, y = 110)
 
+# Pilihan Temperatur
+pilihan = ["Celcius", "Reamur", "Fahrenheit", "Kelvin"]
+box = ttk.Combobox(window, values=pilihan, width= 24)
+box.current(0)
+box.place(x= 20, y = 80)
+
+box2 = ttk.Combobox(window, values=pilihan, width= 24)
+box2.current(1)
+box2.place(x= 20, y = 140)
+
+# Tombol Konvert
+btn = Button(window, text = "Convert", command=lambda : rumus())
+btn.place(x=240, y=83)
+
+# ======================================================================================================================================
+
 # Rumus Konversi Celcius
 cel_reamur = lambda x : f"{4/5 * x}° R"
 cel_fahrenheit = lambda x : f"{(9/5 * x) + 32}° F"
@@ -66,23 +82,11 @@ def rumus():
     def kelvin():
         hitungan.append(kel_celcius(ins)) if kotak1 == "Kelvin" and kotak2 == "Celcius" else hitungan.append(kel_reamur(ins)) if kotak1 == "Kelvin" and kotak2 == "Reamur" else hitungan.append(kel_fahrenheit(ins)) if kotak1 == "Kelvin" and kotak2 == "Fahrenheit" else hitungan.append(f"{ins}° K")
     
+    # Memanggil Fungsi
     celcius()
-
+    # Menampilkan hasil
     e2.insert(0,hitungan[0])
 
-# Pilihan Temperatur
-pilihan = ["Celcius", "Reamur", "Fahrenheit", "Kelvin"]
-box = ttk.Combobox(window, values=pilihan, width= 24)
-box.current(0)
-box.place(x= 20, y = 80)
-
-box2 = ttk.Combobox(window, values=pilihan, width= 24)
-box2.current(1)
-box2.place(x= 20, y = 140)
-
-# Tombol Konvert
-btn = Button(window, text = "Convert", command=lambda : rumus())
-btn.place(x=240, y=83)
 
 # Looping Run Program
 window.mainloop()
