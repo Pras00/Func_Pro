@@ -37,7 +37,7 @@ box2.current(1)
 box2.place(x= 20, y = 140)
 
 # Tombol Konvert
-btn = Button(window, text = "Convert", command=lambda : rumus())
+btn = Button(window, text = "Convert", command=lambda : hasil())
 btn.place(x=240, y=83)
 
 # ======================================================================================================================================
@@ -62,7 +62,7 @@ kel_celcius = lambda x : f"{x - 273}° C"
 kel_reamur = lambda x : f"{4/5 * (x - 273)}° R"
 kel_fahrenheit = lambda x : f"{(9/5 * (x - 273)) + 32}° F"
 
-def rumus():
+def hasil():
     # Hapus isi kotak2
     e2.delete(0,END)
     
@@ -74,11 +74,11 @@ def rumus():
     # Menghitung Rumus
     hitungan = []
     def celcius():
-        hitungan.append(cel_reamur(ins)) if kotak1 == "Celcius" and kotak2 == "Reamur" else hitungan.append(cel_fahrenheit(ins)) if kotak1 == "Celcius" and kotak2 == "Fahrenheit" else hitungan.append(cel_kelvin(ins)) if kotak1 == "Celcius" and kotak2 == "Kelvin" else hitungan.append(f"{ins}° C" if kotak1 == "Celcius" and kotak2 == "Celcius" else reamur())
+        hitungan.append(cel_reamur(ins)) if kotak1 == "Celcius" and kotak2 == "Reamur" else hitungan.append(cel_fahrenheit(ins)) if kotak1 == "Celcius" and kotak2 == "Fahrenheit" else hitungan.append(cel_kelvin(ins)) if kotak1 == "Celcius" and kotak2 == "Kelvin" else hitungan.append(f"{ins}° C") if kotak1 == "Celcius" and kotak2 == "Celcius" else reamur()
     def reamur():
-        hitungan.append(rea_celcius(ins)) if kotak1 == "Reamur" and kotak2 == "Celcius" else hitungan.append(rea_fahrenheit(ins)) if kotak1 == "Reamur" and kotak2 == "Fahrenheit" else hitungan.append(rea_kelvin(ins)) if kotak1 == "Reamur" and kotak2 == "Kelvin" else hitungan.append(f"{ins}° R" if kotak1 == "Reamur" and kotak2 == "Reamur" else fahrenheit())
+        hitungan.append(rea_celcius(ins)) if kotak1 == "Reamur" and kotak2 == "Celcius" else hitungan.append(rea_fahrenheit(ins)) if kotak1 == "Reamur" and kotak2 == "Fahrenheit" else hitungan.append(rea_kelvin(ins)) if kotak1 == "Reamur" and kotak2 == "Kelvin" else hitungan.append(f"{ins}° R") if kotak1 == "Reamur" and kotak2 == "Reamur" else fahrenheit()
     def fahrenheit():
-        hitungan.append(fah_celcius(ins)) if kotak1 == "Fahrenheit" and kotak2 == "Celcius" else hitungan.append(fah_reamur(ins)) if kotak1 == "Fahrenheit" and kotak2 == "Reamur" else hitungan.append(fah_kelvin(ins)) if kotak1 == "Fahrenheit" and kotak2 == "Kelvin" else hitungan.append(f"{ins}° F" if kotak1 == "Fahrenheit" and kotak2 == "Fahrenheit" else kelvin())
+        hitungan.append(fah_celcius(ins)) if kotak1 == "Fahrenheit" and kotak2 == "Celcius" else hitungan.append(fah_reamur(ins)) if kotak1 == "Fahrenheit" and kotak2 == "Reamur" else hitungan.append(fah_kelvin(ins)) if kotak1 == "Fahrenheit" and kotak2 == "Kelvin" else hitungan.append(f"{ins}° F") if kotak1 == "Fahrenheit" and kotak2 == "Fahrenheit" else kelvin()
     def kelvin():
         hitungan.append(kel_celcius(ins)) if kotak1 == "Kelvin" and kotak2 == "Celcius" else hitungan.append(kel_reamur(ins)) if kotak1 == "Kelvin" and kotak2 == "Reamur" else hitungan.append(kel_fahrenheit(ins)) if kotak1 == "Kelvin" and kotak2 == "Fahrenheit" else hitungan.append(f"{ins}° K")
     
