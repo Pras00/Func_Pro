@@ -19,7 +19,7 @@ thefont = tkinter.font.Font(size=15)
 # Judul
 judul = Label(window, text="TEMPERATURE CONVERTER", font=("georgia", 11, "bold")).place(x=17, y=13)
 
-# Kotas Input
+# Kotak Input
 e1 = Entry(window, width = 15, font=thefont)
 e1.place(x= 20, y = 50)
 e2 = Entry(window, width = 15, font=thefont)
